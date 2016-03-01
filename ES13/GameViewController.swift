@@ -89,6 +89,32 @@ class gameObject{
                 toThree++
                 realCountUp++
             }
+            
+            
+            
+            toThree = 1
+            realCountUp = 0
+            normalCountUp = 0
+            var Rindecies: [GLuint] = [GLuint](count: indices.count * 3/11, repeatedValue: GLuint(0.0))
+            
+            for(var countUp = 0; countUp < Rindecies.count - 1; countUp++){
+                print("a")
+                if(toThree == 1){
+                }else if(toThree == 2 || toThree == 3 || toThree == 4){
+                    Rindecies[countUp] = indices[realCountUp] as GLuint
+                    if(toThree == 4){
+                        toThree = 0
+                        realCountUp+=7
+                        normalCountUp+=7
+                    }
+                }
+                toThree++
+                realCountUp++
+            }
+            
+            //Rindecies
+            indices = Rindecies
+            print(indices)
             gCubeVertexData = RgCubeVertexData
         }catch _{
             
